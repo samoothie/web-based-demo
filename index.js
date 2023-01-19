@@ -5,11 +5,17 @@ let x = 100;
 let y = 100;
 let radius = 50;
 let speed = 5;
-
 let upPressed = false;
 let downPressed = false;
 let leftPressed = false;
 let rightPressed = false;
+
+//initial call of draw game, then inside the function, 
+//request frame will initiate loop
+drawGame();
+
+document.body.addEventListener('keydown', keyDown);
+document.body.addEventListener('keyup', keyUp);
 
 //game loop should run 60 times a second to match htz - WIP
 //draw game to match refresh rate
@@ -73,17 +79,11 @@ function drawGreenBlob(){
     //x and y start in top left, y increases downwards
     ctx.fill(); //fills outline with green
 }
+
 function clearScreen(){
     ctx.fillStyle = "black";
     ctx.fillRect(0,0, canvas.width, canvas.height);
 }
-
-//initial call of draw game, then inside the function, 
-//request frame will initiate loop
-drawGame();
-
-document.body.addEventListener('keydown', keyDown);
-document.body.addEventListener('keyup', keyUp);
 
 function keyDown(event) {
     //each key has a key code, down arrow is 40, just google it
