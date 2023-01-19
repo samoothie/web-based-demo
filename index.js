@@ -55,6 +55,18 @@ function inputs() {
 
 function drawGreenBlob(){
     ctx.fillStyle = "green"; //color of blob
+    if(upPressed) {
+        ctx.fillStyle = "red";
+    }
+    if(leftPressed) {
+        ctx.fillStyle = "blue";
+    }
+    if(rightPressed) {
+       ctx.fillStyle = "pink"; 
+    }
+    if(downPressed) {
+        ctx.fillStyle = "yellow";
+    }
     ctx.beginPath(); //build circle
     ctx.arc(x, y, radius,0, Math.PI *2); //dynamic position of blob
     //starting angle 0 and ending angle 2pi
